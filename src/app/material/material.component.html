@@ -1,0 +1,93 @@
+<mat-tab-group>
+
+
+  <mat-tab label="Dialog">
+    <button (click)="openDialog()" mat-raised-button>Open Dialog</button>
+  </mat-tab>
+
+  <mat-tab label="Icon">
+    <mat-icon>add_alert</mat-icon>
+  </mat-tab>
+
+
+  <mat-tab label="CheckBox">
+    <mat-checkbox #showdetails [value]="" [checked]="isChecked" (change)="onChange($event)">
+      Show details</mat-checkbox>
+    <div *ngIf="showdetails.checked">Some details....</div>
+  </mat-tab>
+
+
+  <mat-tab label="Radio Button">
+    <mat-radio-group value="0">
+      <mat-radio-button value="1">
+        Male
+      </mat-radio-button>
+
+      <mat-radio-button value="0">
+        Female
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-tab>
+
+
+  <mat-tab label="Select">
+    <mat-form-field>
+      <mat-select [(ngModel)]="color" placeholder="Favorite Color">
+        <mat-option *ngFor="let color of colors" [value]="color.id">{{ color.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-tab>
+
+
+  <mat-tab label="Form">
+    <form>
+      <mat-form-field>
+        <input ngModel #username="ngModel" name="username" type="text" matInput placeholder="Username" required>
+        <span matSuffix>@domain.com</span>
+        <span matPrefix>admin.</span>
+        <mat-error *ngIf="username.invalid && username.errors.requird">
+          The Username filed is required
+        </mat-error>
+        <mat-hint>Type a unique username.</mat-hint>
+      </mat-form-field>
+    </form>
+  </mat-tab>
+
+
+  <mat-tab label="DatePicker">
+    <mat-form-field>
+      <input (focus)="birthdate.open()" [min]="minDate" [max]="maxDate" matInput [matDatepicker]="birthdate" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
+      <mat-datepicker #birthdate touchUi="true"></mat-datepicker>
+    </mat-form-field>
+  </mat-tab>
+
+
+  <mat-tab label="Button">
+    <button mat-button>Button 1</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">accent</button>
+    <button mat-raised-button color="warn">warn</button>
+    <button mat-fab>
+      <mat-icon>check</mat-icon>
+    </button>
+  </mat-tab>
+
+
+  <mat-tab label="Chip Button">
+    <mat-chip-list>
+      <mat-chip *ngFor="let category of categories" (click)="selectedCategory(category)" [selected]="category.selected">
+        {{ category.name }}
+      </mat-chip>
+    </mat-chip-list>
+  </mat-tab>
+
+
+  <mat-tab label="progress">
+    <mat-progress-spinner mode="determinate" [value]="progress">
+    </mat-progress-spinner>
+
+    <mat-progress-spinner *ngIf="isLoading" mode="indeterminate">
+    </mat-progress-spinner>
+  </mat-tab>
+</mat-tab-group>

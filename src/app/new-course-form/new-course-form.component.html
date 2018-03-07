@@ -1,0 +1,21 @@
+<div class="card">
+
+  <div class="card-header">
+    New Course Component
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+      <form>
+        <input type="text" class="form-control" (keyup.enter)="addTopic(topic)" #topic>
+
+        <ul class="list-group">
+          <li *ngFor="let topic of topics.controls" class="list-group-item" (click)="removeTopic(topic)">
+            {{topic.value}}
+          </li>
+        </ul>
+      </form>
+
+    </blockquote>
+  </div>
+</div>

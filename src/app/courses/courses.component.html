@@ -1,0 +1,34 @@
+<div class="card">
+
+  <div class="card-header">
+    Courses Component
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+      <h2>{{ title }}</h2>
+      <div>
+        <button class="btn btn-primary" (click)="loadCourses()">Load Courses</button>
+      </div>
+
+      <div *ngIf="courses.length >= 1; then coursesList else noCourses">
+      </div>
+      <ng-template #coursesList>
+        <ul>
+          <li *ngFor="let course of courses; trackBy: trackCourse">
+            {{ course.name }}
+          </li>
+        </ul>
+      </ng-template>
+      <ng-template #noCourses>
+        No Courses yet
+      </ng-template>
+
+      <div>
+        <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button>
+        <input (keyup.enter)="onKeyUp()" [(ngModel)]="email" />
+      </div>
+
+    </blockquote>
+  </div>
+</div>
