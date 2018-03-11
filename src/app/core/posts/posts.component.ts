@@ -1,8 +1,10 @@
-import { BadInput } from './../common/bad-input';
-import { AppError } from './../common/app-errors';
-import { PostService } from './../services/post.service';
+
 import { Component, OnInit } from '@angular/core';
-import { NotFoundError } from '../common/not-found-error';
+import { PostService } from '../../services/post.service';
+import { AppError } from '../../common/app-errors';
+import { BadInput } from '../../common/bad-input';
+import { NotFoundError } from '../../common/not-found-error';
+
 
 @Component({
   // tslint:disable-next-line:component-selector
