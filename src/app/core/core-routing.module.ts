@@ -14,7 +14,7 @@ import { MaterialComponent } from './material/material.component';
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'admin', canActivate: [AuthGuard, AdminAuthGuard], loadChildren: './admin/admin.module#AdminModule' },
+    { path: 'admin', canActivate: [AuthGuard, AdminAuthGuard], loadChildren: '../admin/admin.module#AdminModule' },
     { path: 'home', component: HomeComponent },
     { path: 'followers/:id/:username', component: GithubProfileComponent },
     { path: 'followers', component: GithubFollowersComponent },

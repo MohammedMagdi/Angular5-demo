@@ -21,7 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { RouterModule } from '@angular/router';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from '../admin/admin.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
@@ -41,7 +41,6 @@ import { fakeBackendProvider } from '../helpers/fake-backend';
 import { PostService } from '../services/post.service';
 import { AppErrorHandler } from '../common/app-error-handler';
 import { CoreRoutingModule } from './core-routing.module';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -55,13 +54,11 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     GithubProfileComponent,
     NotFoundComponent,
     GithubFollowersComponent,
-    AdminComponent,
     NoAccessComponent,
     SignupComponent,
     LoginComponent,
     MaterialComponent,
     DialogComponent,
-    DashboardComponent,
   ],
   entryComponents: [
     DialogComponent
