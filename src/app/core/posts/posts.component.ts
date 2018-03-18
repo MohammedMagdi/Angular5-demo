@@ -21,6 +21,7 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     this.service.getAll()
       .subscribe(posts => { this.posts = posts; });
+    // console.log('posts', this.posts);
   }
 
   createPost(input: HTMLInputElement) {
